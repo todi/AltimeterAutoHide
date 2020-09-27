@@ -16,3 +16,8 @@ Use the provided csproj to open the project in Visual Studio. Then change the re
 The easiest way is to install it with CKAN.
 
 For manual installation download the latest release for your version of KSP and unzip the AltimeterAutoHide folder into your GameData directory.
+
+## Links
+
+ - [KSP Forum Thread](https://forum.kerbalspaceprogram.com/index.php?/topic/197164-1101-altimeterautohide-v10/)
+ - [SpaceDock Page](https://spacedock.info/mod/2541/AltimeterAutoHide)
