@@ -6,7 +6,7 @@ A small mod for KSP that hides the altimeter during flight to save screen estate
 Move your mouse to the top edge (where the altimeter usually is) to access the recover/abort/gear/etc buttons (See demo image below).
 I recommend using mods like [Kerbal Engineer Redux](https://github.com/jrbudda/KerbalEngineer) 
 or [MechJeb](https://github.com/MuMech/MechJeb2) to display the altitude information in a more space-efficient manner.
-Works also well with [Draggable Altimeter](https://github.com/andrew-vant/dragalt)
+Works also well with [Draggable Altimeter](https://github.com/andrew-vant/dragalt).
 
 ![usage example](https://raw.githubusercontent.com/todi/AltimeterAutoHide/master/demo.gif)
 
