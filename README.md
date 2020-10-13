@@ -22,6 +22,13 @@ The easiest way is to install it with CKAN.
 
 For manual installation download the latest release for your version of KSP and unzip the AltimeterAutoHide folder into your GameData directory.
 
+## Configuration
+
+There is no in-game configuration GUI. To change settings you have to edit `GameData/AltimeterAutoHide/PluginData/AltimeterAutoHide`.
+
+ - `activationPadding`: number of pixels the activation area is extended beyond the altimeters dimensions.
+ - `stickyOnLoad`: setting this to 1 will show the altimeter by default on flight scene load. Right-click it to enable auto-hide. 
+
 ## Links
 
  - [KSP Forum Thread](https://forum.kerbalspaceprogram.com/index.php?/topic/197164-1101-altimeterautohide-v10/)
