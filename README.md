@@ -31,7 +31,7 @@ There is no in-game configuration GUI. To change settings you have to edit `Game
 
 ## Links
 
- - [KSP Forum Thread](https://forum.kerbalspaceprogram.com/index.php?/topic/197164-1101-altimeterautohide-v10/)
+ - [KSP Forum Thread](https://forum.kerbalspaceprogram.com/index.php?/topic/197164-*/)
  - [SpaceDock Page](https://spacedock.info/mod/2541/AltimeterAutoHide)
  - [Releases](https://github.com/todi/AltimeterAutoHide/releases)
  - [Issues](https://github.com/todi/AltimeterAutoHide/issues)
