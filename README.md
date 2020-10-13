@@ -24,10 +24,11 @@ For manual installation download the latest release for your version of KSP and 
 
 ## Configuration
 
-There is no in-game configuration GUI. To change settings you have to edit `GameData/AltimeterAutoHide/PluginData/AltimeterAutoHide`.
+There is no in-game configuration GUI. To change settings you have to edit the config file:
+```GameData/AltimeterAutoHide/PluginData/AltimeterAutoHide/config.xml```
 
  - `activationPadding`: number of pixels the activation area is extended beyond the altimeters dimensions.
- - `stickyOnLoad`: setting this to 1 will show the altimeter by default on flight scene load. Right-click it to enable auto-hide. 
+ - `stickyOnLoad`: setting this to 1 will show the altimeter by default on flight scene load. Right-click the altimeter to reenable auto-hide. 
 
 ## Links
 
