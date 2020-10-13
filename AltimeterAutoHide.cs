@@ -1,13 +1,8 @@
 ﻿using FlightUIModeControllerUtil;
 using KSP.IO;
 using KSP.UI;
-using SaveUpgradePipeline;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace AltimeterAutoHide
 {
@@ -19,6 +14,9 @@ namespace AltimeterAutoHide
         private UIPanelTransition altimeterFrame;
         private bool mapView = false;
         private Vector2 activationPadding = new Vector2(20, 40);
+        private bool sticky;
+        private bool stickyOnLoad = false;
+        private AltimeterHoverHandler hoverHandler;
 
         public void Start()
         {
@@ -28,10 +26,18 @@ namespace AltimeterAutoHide
             altimeterFrame = FlightUIModeController.Instance.altimeterFrame;
             IVACollapseGroup = GameObject.Find("IVACollapseGroup").transform;
             topFrame = ((RectTransform)IVACollapseGroup.transform.parent);
+            IVACollapseGroup.gameObject.AddComponent<AltimeterHoverHandler>();
+            hoverHandler = IVACollapseGroup.GetComponent<AltimeterHoverHandler>();
+            sticky = stickyOnLoad;
         }
 
         public void Update()
         {
+            if (Input.GetMouseButtonDown(1) && hoverHandler.hover)
+            {
+                    sticky = !sticky;
+            }
+
             if (!mapView && IVACollapseGroup != null && topFrame != null && altimeterFrame != null)
             {
                 float height = GameSettings.UI_SCALE * topFrame.localScale.y * topFrame.rect.height / 2;
@@ -52,7 +58,7 @@ namespace AltimeterAutoHide
                 }
                 else
                 {
-                    if (!keepArea.Contains(Mouse.screenPos))
+                    if (!sticky && !keepArea.Contains(Mouse.screenPos))
                     {
                         altimeterFrame.Transition(TabAction.COLLAPSE.TransitionStateName());
                     }
@@ -74,7 +80,25 @@ namespace AltimeterAutoHide
             PluginConfiguration config = PluginConfiguration.CreateForType<AltimeterAutoHide>();
             config.load();
             activationPadding = config.GetValue<Vector2>("activationPadding", activationPadding);
+            stickyOnLoad = config.GetValue<bool>("stickyOnLoad", stickyOnLoad);
             config.save();
+        }
+    }
+
+    /* Couldn't get IPointerClickHandler to work so we use this as a workaround */
+    public class AltimeterHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    {
+
+        public bool hover { get; private set; } = false;
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            hover = true;
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            hover = false;
         }
     }
 }
